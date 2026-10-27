@@ -1,0 +1,43 @@
+{
+  "name": "休講日カレンダー（月ごとに公開）",
+  "endpoint": "calendar",
+  "type": "list",
+  "allowAdditionalCharge": false,
+  "apiFields": [
+    {
+      "fieldId": "month",
+      "name": "対象月（例：2026-10）",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "days",
+      "name": "休講日",
+      "kind": "repeater",
+      "required": false,
+      "customFieldIds": ["holiday"]
+    },
+    {
+      "fieldId": "note",
+      "name": "補足",
+      "kind": "textArea",
+      "required": false
+    }
+  ],
+  "customFields": [
+    {
+      "fieldId": "holiday",
+      "name": "休講日",
+      "fields": [
+        {
+          "fieldId": "day",
+          "name": "日付",
+          "kind": "date",
+          "required": true,
+          "dateFormat": true
+        }
+      ],
+      "fieldOrderByColumn": [["day"]]
+    }
+  ]
+}

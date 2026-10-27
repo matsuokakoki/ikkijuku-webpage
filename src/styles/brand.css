@@ -1,0 +1,288 @@
+/* Preserve the existing site's identity and two-stage falling logo.
+   Motion is CSS-only and never gates page content or data availability. */
+:root {
+  --ink: #182923;
+  --green: #396b60;
+  --paper: #fffdf7;
+  --sage: #f1eee5;
+  --accent: #f0d269;
+  --line: #deddd4;
+}
+.brand-mark,
+.brand-name {
+  display: none;
+}
+.brand {
+  display: block;
+}
+.brand img {
+  width: 180px;
+  height: auto;
+}
+.site-header {
+  height: 76px;
+}
+.original-hero {
+  position: relative;
+  isolation: isolate;
+  height: calc(100svh - 76px);
+  min-height: 670px;
+  background: #17241f;
+  overflow: hidden;
+  color: #fffdf7;
+}
+.original-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: -2;
+}
+.original-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 27, 22, 0.88),
+    rgba(12, 27, 22, 0.66) 43%,
+    rgba(12, 27, 22, 0.12) 85%
+  );
+}
+.original-hero-center {
+  text-align: center;
+  padding: 75px 20px 0;
+}
+.original-hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #ffffffbc;
+  margin-bottom: 24px;
+}
+.original-hero-tagline {
+  font-size: clamp(15px, 1.6vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #f4d66c;
+  margin-bottom: 12px;
+}
+.original-hero h1 {
+  font: 700 clamp(74px, 9vw, 128px)/1.05 var(--serif);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+.falling-logo {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  margin: 4px auto 0;
+}
+.logo-part {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  animation: dropBounce 0.9s cubic-bezier(0.25, 0.9, 0.35, 1.2) both;
+}
+.logo-bottom {
+  animation-delay: 0.9s;
+}
+.logo-top {
+  animation-delay: 1.4s;
+}
+.original-hero-base {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  align-items: end;
+}
+.original-hero-base p {
+  font-size: 14px;
+  line-height: 2;
+  color: #ffffffd2;
+  margin: 0;
+}
+.original-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.original-hero-actions a {
+  border: 1px solid #ffffffa0;
+  padding: 13px 25px;
+  min-width: 172px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.original-hero-actions .hero-primary {
+  background: #f0d269;
+  border-color: #f0d269;
+  color: #15241f;
+}
+.original-hero-actions a:hover {
+  background: #fffdf7;
+  color: #15241f;
+}
+.hero-scroll {
+  position: absolute;
+  right: 32px;
+  bottom: 12px;
+  font:
+    9px Arial,
+    sans-serif;
+  letter-spacing: 0.2em;
+  display: flex;
+  gap: 15px;
+  color: #ffffffbc;
+}
+.message-grid {
+  background: #182923;
+  color: #fffdf7;
+  width: 100%;
+  padding-inline: max(48px, calc((100% - 1160px) / 2));
+  gap: 65px;
+}
+.message-grid .eyebrow {
+  color: #f0d269;
+}
+.message-portrait img {
+  border-radius: 0;
+  filter: none;
+  aspect-ratio: 1.5;
+}
+.course-panel.dark {
+  background: #182923;
+}
+.philosophy {
+  background: #f6f4ec;
+}
+.feature-number {
+  color: #b79b40;
+}
+.results-preview {
+  background: #f0d26918;
+}
+.access-preview {
+  background: #f5f1e5;
+}
+.contact-band {
+  background: #182923;
+}
+.header-contact {
+  background: #182923;
+}
+.section-heading h2 {
+  font-family: var(--serif);
+}
+@keyframes dropBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-95px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 900px) {
+  .original-hero {
+    min-height: 700px;
+  }
+  .original-hero-base {
+    display: block;
+  }
+  .original-hero-actions {
+    margin-top: 22px;
+  }
+  .original-hero-center {
+    padding-top: 60px;
+  }
+  .message-grid {
+    padding-inline: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    height: 72px;
+  }
+  .brand img {
+    width: 128px;
+  }
+  .original-hero {
+    height: calc(100svh - 72px);
+    min-height: 620px;
+  }
+  .original-hero-center {
+    padding-top: 48px;
+  }
+  .original-hero-eyebrow {
+    font-size: 10px;
+    margin-bottom: 22px;
+  }
+  .original-hero-tagline {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  .original-hero h1 {
+    font-size: 76px;
+  }
+  .falling-logo {
+    width: 120px;
+    height: 120px;
+    margin-top: 12px;
+  }
+  .original-hero-base {
+    bottom: 40px;
+  }
+  .original-hero-base p {
+    font-size: 11px;
+    line-height: 2;
+  }
+  .original-hero-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .original-hero-actions a {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 10px;
+    font-size: 11px;
+  }
+  .hero-scroll {
+    right: 20px;
+    font-size: 8px;
+  }
+  .message-grid {
+    padding-inline: 20px;
+    gap: 28px;
+  }
+  .message-portrait {
+    margin-right: 0;
+  }
+  .mobile-menu nav {
+    top: 72px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-part {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

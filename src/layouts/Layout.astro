@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+import '../styles/brand.css';
+import { staticSite as site } from '../data/static';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description = site.description } = Astro.props;
+const current = Astro.url.pathname;
+const canonical = new URL(current, Astro.site);
+const ready =
+  import.meta.env.LAUNCH_READY === 'true' && import.meta.env.CONTENT_SOURCE === 'microcms';
+const links = [
+  ['/about/', '一輝塾について'],
+  ['/courses/', '授業・料金'],
+  ['/achievements/', '合格実績'],
+  ['/news/', 'お知らせ'],
+  ['/access/', 'アクセス'],
+];
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} | ${site.name}` : `${site.name} | 江南市の個別指導塾`}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {!ready && <meta name="robots" content="noindex,nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta
+      property="og:title"
+      content={title ? `${title} | 一輝塾` : '一輝塾 | 江南市の個別指導塾'}
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/images/ogp.webp', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      本文へ移動
+    </a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="一輝塾 トップページ">
+        <img src="/images/sign.webp" width="5000" height="1289" alt="一輝塾" />
+      </a>
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
+        {links.map(([href, label]) => (
+          <a href={href} aria-current={current.startsWith(href) ? 'page' : undefined}>
+            {label}
+          </a>
+        ))}
+      </nav>
+      <a class="header-contact" href="/contact/">
+        お問い合わせ <span aria-hidden="true">↗</span>
+      </a>
+      <details class="mobile-menu">
+        <summary>メニュー</summary>
+        <nav aria-label="モバイルナビゲーション">
+          {links.map(([href, label]) => (
+            <a href={href}>{label}</a>
+          ))}
+          <a href="/contact/">お問い合わせ</a>
+          <a href="https://juku-attendance.web.app/login.html">塾生出欠</a>
+        </nav>
+      </details>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <section class="contact-band" aria-labelledby="contact-title">
+      <div class="wrap contact-band-inner">
+        <div>
+          <span class="eyebrow light">LET’S TALK</span>
+          <h2 id="contact-title">
+            これからの学びを、
+            <br />
+            一緒に考えましょう。
+          </h2>
+          <p>授業や通塾について、お気軽にご相談ください。</p>
+        </div>
+        <a class="button button-light" href="/contact/">
+          お問い合わせ <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <a class="footer-brand" href="/">
+            一輝塾 <small>IKKI JUKU</small>
+          </a>
+          <p>
+            〒{site.postalCode}
+            <br />
+            {site.address}
+            <br />
+            {site.access}
+          </p>
+          <a href={`tel:${site.phone}`}>{site.phone}</a>
+        </div>
+        <div class="footer-links">
+          {links.map(([href, label]) => (
+            <a href={href}>{label}</a>
+          ))}
+          <a href="/calendar/">休講日</a>
+          <a href="https://juku-attendance.web.app/login.html">塾生出欠 ↗</a>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <small>© {new Date().getFullYear()} 一輝塾</small>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </div>
+    </footer>
+  </body>
+</html>

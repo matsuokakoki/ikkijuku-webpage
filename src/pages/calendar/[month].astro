@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import Calendar from '../../components/Calendar.astro';
+import { getContent } from '../../lib/content';
+import { calendarNavigation } from '../../lib/calendar';
+export async function getStaticPaths() {
+  const { calendar } = await getContent();
+  const { months } = calendarNavigation(calendar);
+  return months.map((month, i) => ({
+    params: { month: month.month },
+    props: { month, previous: months[i - 1]?.month, next: months[i + 1]?.month },
+  }));
+}
+const { month, previous, next } = Astro.props;
+---
+
+<Layout title={`${month.month} 休講日`}>
+  <PageHeading en="CALENDAR" title="休講日のお知らせ" />
+  <section class="wrap content-section calendar-content">
+    <Calendar month={month} previous={previous} next={next} />
+    <a class="text-link" href="/calendar/">
+      公開中の月一覧を見る ↗
+    </a>
+  </section>
+</Layout>

@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Calendar from '../components/Calendar.astro';
+import { calendarNavigation } from '../lib/calendar';
+import NewsList from '../components/NewsList.astro';
+import { getContent } from '../lib/content';
+import { staticSite } from '../data/static';
+const { site, news, calendar } = await getContent();
+const { months, selected, index } = calendarNavigation(calendar);
+const features = [
+  [
+    '01',
+    '目標から逆算する、学習戦略。',
+    '志望校も、得意も、苦手も人それぞれ。一人ひとりに合わせて、今取り組むべきことを一緒に考えます。',
+  ],
+  [
+    '02',
+    '代表が向き合う、個別指導。',
+    '集団授業だけでなく、個別指導も代表が担当。学びのつまずきから、その先の挑戦まで支えます。',
+  ],
+  [
+    '03',
+    '学年を越えて、挑戦できる。',
+    '集団授業には飛び級制度も。学年の枠にとらわれず、自分の可能性を広げる学びを大切にします。',
+  ],
+];
+---
+
+<Layout>
+  <Hero />
+  <div class="admission-strip">
+    <div class="wrap">
+      <span class="status-dot" aria-hidden="true"></span>
+      <strong>募集状況</strong>
+      <p>{site.acceptance}</p>
+      <a href="/contact/">
+        詳しくはこちら <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <section class="section wrap news-section" id="news">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">NEWS</span>
+        <h2>お知らせ</h2>
+      </div>
+      <a class="text-link" href="/news/">
+        すべてのお知らせ <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <NewsList items={news.slice(0, 3)} />
+  </section>
+  <section class="section wrap calendar-home">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">CALENDAR</span>
+        <h2>休講日一覧</h2>
+      </div>
+      <a class="text-link" href="/calendar/">
+        カレンダーを見る ↗
+      </a>
+    </div>
+    {selected && (
+      <Calendar
+        month={selected}
+        previous={months[index - 1]?.month}
+        next={months[index + 1]?.month}
+      />
+    )}
+  </section>
+  <section class="section philosophy" id="features">
+    <div class="wrap philosophy-grid">
+      <div>
+        <span class="eyebrow">OUR APPROACH</span>
+        <h2 class="display-heading">
+          「わかる」の先に、
+          <br />
+          自分で進む力を。
+        </h2>
+      </div>
+      <div>
+        <p class="section-lead">
+          同じ目標でも、たどり着く道は一つではありません。
+          <br />
+          だから一輝塾は、一人ひとりに合わせて学びを設計します。
+        </p>
+        <p>
+          定期テストから、高校受験、大学受験まで。
+          <br />
+          今の課題を見つめながら、少し先の可能性を広げていく。
+          <br />
+          その積み重ねを、ここで一緒に。
+        </p>
+        <a class="text-link" href="/about/">
+          一輝塾について <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="wrap feature-grid">
+      {features.map(([n, title, text]) => (
+        <article class="feature">
+          <span class="feature-number">{n}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="section wrap courses-preview">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">COURSES</span>
+        <h2>自分に合う学び方を。</h2>
+      </div>
+      <a class="text-link" href="/courses/">
+        授業・料金を見る <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="course-grid">
+      <a href="/courses/#junior" class="course-panel">
+        <span class="eyebrow">JUNIOR HIGH SCHOOL</span>
+        <h3>中学生</h3>
+        <p>
+          日々の「わからない」から、
+          <br />
+          志望校へつながる一歩まで。
+        </p>
+        <span class="course-bottom">
+          定期テスト対策・高校受験 <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+      <a href="/courses/#high" class="course-panel dark">
+        <span class="eyebrow light">HIGH SCHOOL</span>
+        <h3>高校生</h3>
+        <p>
+          目標から逆算して、
+          <br />
+          大学受験に向かう道筋を。
+        </p>
+        <span class="course-bottom">
+          学校の学習サポート・大学受験 <span aria-hidden="true">↗</span>
+        </span>
+      </a>
+    </div>
+  </section>
+  <section class="section results-preview">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ACHIEVEMENTS</span>
+          <h2>挑戦の、その先へ。</h2>
+        </div>
+        <a class="text-link" href="/achievements/">
+          合格実績を見る <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="result-row">
+        <span>{site.universityLabel}</span>
+        <p>{site.universitySummary}</p>
+      </div>
+      <div class="result-row">
+        <span>{site.highschoolLabel}</span>
+        <p>{site.highschoolSummary}</p>
+      </div>
+      <p class="fine-print">
+        これまでの合格実績です。年度ごとの詳細は合格実績ページをご覧ください。
+      </p>
+    </div>
+  </section>
+  <section class="section wrap message-grid">
+    <div class="message-portrait">
+      <img
+        src="/images/teacher.webp"
+        width="1024"
+        height="628"
+        alt="一輝塾代表 澤木勇佑"
+        loading="lazy"
+      />
+    </div>
+    <div>
+      <span class="eyebrow">MESSAGE</span>
+      <h2 class="display-heading">
+        受験の経験を、
+        <br />
+        これからの自信に。
+      </h2>
+      <p class="preserve-lines">{staticSite.message}</p>
+      <p class="teacher-signature">
+        一輝塾 代表 <strong>{staticSite.teacherName}</strong>
+      </p>
+    </div>
+  </section>
+  <section class="section access-preview">
+    <div class="wrap access-grid">
+      <div>
+        <span class="eyebrow">ACCESS</span>
+        <h2>
+          いつもの街で、
+          <br />
+          新しい一歩を。
+        </h2>
+        <p>
+          {staticSite.address}
+          <br />
+          {staticSite.access}
+        </p>
+        <a class="text-link" href="/access/">
+          アクセス・教室案内 <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <img
+        src="/images/building.webp"
+        width="1080"
+        height="1920"
+        loading="lazy"
+        alt="一輝塾の教室がある建物の外観"
+      />
+    </div>
+  </section>
+</Layout>

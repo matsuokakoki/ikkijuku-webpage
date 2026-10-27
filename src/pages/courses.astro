@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { getContent } from '../lib/content';
+const { site } = await getContent();
+---
+
+<Layout title="授業・料金">
+  <PageHeading
+    en="COURSES & FEES"
+    title="目標に合わせて、学びを設計。"
+    lead="中学生・高校生の学習と受験をサポートします。"
+  />
+  <section class="wrap content-section course-grid">
+    <article id="junior" class="course-panel">
+      <span class="eyebrow">JUNIOR HIGH SCHOOL</span>
+      <h2>中学生</h2>
+      <p>学校の学習を着実に身につけながら、定期テストと高校受験に向けて学びを積み重ねます。</p>
+      <strong class="fee">
+        {site.juniorFee}
+        <small> ／1コマ</small>
+      </strong>
+    </article>
+    <article id="high" class="course-panel dark">
+      <span class="eyebrow light">HIGH SCHOOL</span>
+      <h2>高校生</h2>
+      <p>今の課題と志望校を見据えて、大学受験までの学習戦略を一緒に考えます。</p>
+      <strong class="fee">
+        {site.highFee}
+        <small> ／1コマ</small>
+      </strong>
+    </article>
+  </section>
+  <section class="wrap content-section info-grid">
+    <div>
+      <span class="eyebrow">SCHEDULE</span>
+      <h2>授業開始時間</h2>
+      <dl class="detail-list">
+        {site.schedule.map((row) => (
+          <div>
+            <dt>{row.label}</dt>
+            <dd class="preserve-lines">{row.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="fine-print">
+        休講日は<a href="/calendar/">休講日カレンダー</a>をご確認ください。
+      </p>
+    </div>
+    <div>
+      <span class="eyebrow">FEES</span>
+      <h2>受講例</h2>
+      <p>{site.priceNote}</p>
+      <dl class="detail-list">
+        {site.examples.map((row) => (
+          <div>
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="fine-print">{site.priceFooter}</p>
+    </div>
+  </section>
+  <section class="wrap content-section prose">
+    <h2>受講について</h2>
+    <p class="notice">{site.acceptance}</p>
+    <p>
+      通塾回数や時間については、学習状況や目標をお伺いしながらご相談します。最新の募集状況はお問い合わせください。
+    </p>
+  </section>
+</Layout>

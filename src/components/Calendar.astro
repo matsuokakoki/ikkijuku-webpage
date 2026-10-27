@@ -1,0 +1,46 @@
+---
+import type { Content } from '../lib/schema';
+import { monthCells } from '../lib/format';
+interface Props {
+  month: Content['calendar'][number];
+  previous?: string;
+  next?: string;
+}
+const { month, previous, next } = Astro.props;
+const cells = monthCells(month.month, month.days);
+---
+
+<section class="calendar-month">
+  <div class="calendar-controls">
+    {previous ? <a href={`/calendar/${previous}/`}>← 前月</a> : <span></span>}
+    <h2>{month.month.replace('-', '年')}月</h2>
+    {next ? <a href={`/calendar/${next}/`}>翌月 →</a> : <span></span>}
+  </div>
+  <table class="calendar">
+    <caption class="sr-only">{month.month}の休講日カレンダー</caption>
+    <thead>
+      <tr>
+        {['日', '月', '火', '水', '木', '金', '土'].map((d) => (
+          <th scope="col">{d}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {Array.from({ length: cells.length / 7 }, (_, week) => (
+        <tr>
+          {cells.slice(week * 7, week * 7 + 7).map((cell) => (
+            <td class:list={[{ closed: cell?.closed, sunday: cell?.sunday }]}>
+              {cell && (
+                <>
+                  <span>{cell.day}</span>
+                  {cell.closed && <small>休講</small>}
+                </>
+              )}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <p class="preserve-lines fine-print">{month.note}</p>
+</section>

@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { getContent } from '../lib/content';
+import { staticSite as site } from '../data/static';
+const { site: settings } = await getContent();
+const raw = import.meta.env.CONTACT_FORM_URL || '';
+const formUrl = /^https:\/\/(docs\.google\.com\/forms\/|forms\.gle\/)/.test(raw) ? raw : null;
+---
+
+<Layout title="お問い合わせ">
+  <PageHeading
+    en="CONTACT"
+    title="学びのこと、まずはご相談を。"
+    lead="授業内容や通塾について、ご不明な点をお聞かせください。"
+  />
+  <section class="wrap content-section contact-content">
+    <p class="notice">
+      <strong>現在の募集状況</strong>
+      <br />
+      {settings.acceptance}
+    </p>
+    <div class="contact-options">
+      <article>
+        <span class="eyebrow">BY PHONE</span>
+        <h2>お電話でのお問い合わせ</h2>
+        <a class="phone-link" href={`tel:${site.phone}`}>
+          {site.phone}
+        </a>
+        <p>
+          受付時間：平日15:00–22:30／土曜12:00–22:30
+          <br />
+          日曜定休
+        </p>
+      </article>
+      <article>
+        <span class="eyebrow">BY EMAIL</span>
+        <h2>メールでのお問い合わせ</h2>
+        <a
+          class="email-link"
+          href={`mailto:${site.email}?subject=${encodeURIComponent('一輝塾へのお問い合わせ')}`}
+        >
+          {site.email} ↗
+        </a>
+        <p>
+          お名前・学年・ご相談内容をお知らせください。
+          <br />
+          メールアプリが開きます。
+        </p>
+      </article>
+    </div>
+    {!formUrl && <ContactForm />}
+    {formUrl && (
+      <div class="form-option">
+        <h2>フォームでのお問い合わせ</h2>
+        <a class="button" href={formUrl} target="_blank" rel="noopener noreferrer">
+          お問い合わせフォームを開く ↗
+        </a>
+        <p class="fine-print">Googleフォームが開きます。</p>
+      </div>
+    )}
+    <p class="fine-print">
+      いただいた個人情報は、ご相談への回答やご連絡のために利用します。
+      <a href="/privacy/">プライバシーポリシー</a>をご確認ください。
+    </p>
+  </section>
+</Layout>

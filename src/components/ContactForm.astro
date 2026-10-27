@@ -1,0 +1,127 @@
+---
+const next = new URL('/contact/thanks/', Astro.site).href;
+---
+
+<section class="form-option" aria-labelledby="form-title">
+  <span class="eyebrow">CONTACT FORM</span>
+  <h2 id="form-title">フォームでお問い合わせ</h2>
+  <p>
+    ご希望やご相談内容をお聞かせください。<span class="fine-print">「必須」は入力が必要です。</span>
+  </p>
+  <form
+    class="contact-form"
+    action="https://formsubmit.co/i5k0o9k@gmail.com"
+    method="POST"
+    accept-charset="UTF-8"
+  >
+    <input type="hidden" name="_subject" value="【一輝塾】Webお問い合わせ" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_next" value={next} />
+    <div class="honeypot" aria-hidden="true">
+      <label for="website">この欄は入力しないでください</label>
+      <input id="website" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+    </div>
+    <div class="form-field">
+      <label for="name">
+        お名前 <span>必須</span>
+      </label>
+      <input id="name" name="お名前" autocomplete="name" required maxlength="100" />
+    </div>
+    <fieldset class="form-field">
+      <legend>
+        中学生・高校生の区分 <span>必須</span>
+      </legend>
+      <div class="choices">
+        <label>
+          <input type="radio" name="在籍区分" value="中学生" required /> 中学生
+        </label>
+        <label>
+          <input type="radio" name="在籍区分" value="高校生" required /> 高校生
+        </label>
+      </div>
+    </fieldset>
+    <div class="form-field">
+      <label for="grade">
+        学年 <span>必須</span>
+      </label>
+      <select id="grade" name="学年" required>
+        <option value="" disabled selected>
+          選択してください
+        </option>
+        {[
+          '中学1年生',
+          '中学2年生',
+          '中学3年生',
+          '高校1年生',
+          '高校2年生',
+          '高校3年生',
+          'その他',
+        ].map((x) => (
+          <option>{x}</option>
+        ))}
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="school">
+        学校名 <span>必須</span>
+      </label>
+      <input id="school" name="学校名" required maxlength="150" />
+    </div>
+    <fieldset class="form-field">
+      <legend>
+        週何日通うことを希望しますか <span>必須</span>
+      </legend>
+      <div class="choices">
+        {['週1', '週2', '週3以上', 'できる限り沢山'].map((x) => (
+          <label>
+            <input type="radio" name="通塾希望" value={x} required /> {x}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    <fieldset class="form-field">
+      <legend>集団授業への参加予定（新高校1年生以上）</legend>
+      <div class="choices">
+        {['参加予定', '参加しない予定', '対象外・未定'].map((x) => (
+          <label>
+            <input type="radio" name="集団授業参加予定" value={x} /> {x}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    <div class="form-field">
+      <label for="lesson-time">
+        個別授業を希望する曜日・日時 <span>必須</span>
+      </label>
+      <p class="fine-print" id="lesson-help">
+        例：月曜18:00、木曜19:30を希望。授業開始時間は授業・料金ページをご確認ください。
+      </p>
+      <textarea
+        id="lesson-time"
+        name="個別授業の希望曜日・日時"
+        required
+        maxlength="2000"
+        aria-describedby="lesson-help"
+      ></textarea>
+    </div>
+    <div class="form-field">
+      <label for="email">
+        返信先メールアドレス <span>必須</span>
+      </label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" />
+    </div>
+    <div class="form-field">
+      <label for="message">その他・ご質問</label>
+      <textarea id="message" name="その他・ご質問" maxlength="5000"></textarea>
+    </div>
+    <p class="fine-print">
+      送信内容はFormSubmitを通じて教室の窓口へ届けます。送信時に迷惑送信防止の認証画面が表示される場合があります。
+    </p>
+    <p class="fine-print">
+      <a href="/privacy/">プライバシーポリシー</a>をご確認のうえ送信してください。
+    </p>
+    <button class="button submit-button" type="submit">
+      内容を送信する <span aria-hidden="true">↗</span>
+    </button>
+  </form>
+</section>

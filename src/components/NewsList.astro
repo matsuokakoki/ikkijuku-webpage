@@ -1,0 +1,27 @@
+---
+import { formatDate } from '../lib/format';
+import type { Content } from '../lib/schema';
+interface Props {
+  items: Content['news'];
+}
+const { items } = Astro.props;
+---
+
+{items.length ? (
+  <ul class="news-list">
+    {items.map((item) => (
+      <li>
+        <a href={`/news/${item.id}/`}>
+          <time datetime={item.date}>{formatDate(item.date)}</time>
+          <span class="news-tag">お知らせ</span>
+          <span class="news-title">{item.title}</span>
+          <span aria-hidden="true" class="news-arrow">
+            ↗
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+) : (
+  <p class="empty-state">現在、お知らせはありません。</p>
+)}

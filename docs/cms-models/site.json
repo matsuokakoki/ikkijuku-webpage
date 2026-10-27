@@ -1,0 +1,116 @@
+{
+  "name": "募集状況・授業時間・料金・実績概要",
+  "endpoint": "site",
+  "type": "object",
+  "allowAdditionalCharge": false,
+  "apiFields": [
+    {
+      "fieldId": "acceptance",
+      "name": "受講生の募集状況",
+      "kind": "textArea",
+      "required": true
+    },
+    {
+      "fieldId": "universityLabel",
+      "name": "大学受験の見出し",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "universitySummary",
+      "name": "大学の合格校一覧",
+      "kind": "textArea",
+      "required": true
+    },
+    {
+      "fieldId": "highschoolLabel",
+      "name": "高校受験の見出し",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "highschoolSummary",
+      "name": "高校の合格校一覧",
+      "kind": "textArea",
+      "required": true
+    },
+    {
+      "fieldId": "priceNote",
+      "name": "料金の補足（例：1コマ80分）",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "juniorFee",
+      "name": "中学生の料金",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "highFee",
+      "name": "高校生の料金",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "priceFooter",
+      "name": "料金表の下の注意書き",
+      "kind": "textArea",
+      "required": true
+    },
+    {
+      "fieldId": "schedule",
+      "name": "授業開始時間",
+      "kind": "repeater",
+      "required": true,
+      "customFieldIds": ["scheduleRow"]
+    },
+    {
+      "fieldId": "examples",
+      "name": "受講例と料金",
+      "kind": "repeater",
+      "required": true,
+      "customFieldIds": ["priceRow"]
+    }
+  ],
+  "customFields": [
+    {
+      "fieldId": "scheduleRow",
+      "name": "曜日と時間",
+      "fields": [
+        {
+          "fieldId": "label",
+          "name": "曜日",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "fieldId": "value",
+          "name": "開始時間",
+          "kind": "textArea",
+          "required": true
+        }
+      ],
+      "fieldOrderByColumn": [["label", "value"]]
+    },
+    {
+      "fieldId": "priceRow",
+      "name": "受講例",
+      "fields": [
+        {
+          "fieldId": "label",
+          "name": "コース名",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "fieldId": "value",
+          "name": "料金",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "fieldOrderByColumn": [["label", "value"]]
+    }
+  ]
+}

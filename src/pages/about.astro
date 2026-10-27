@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { staticSite as site } from '../data/static';
+---
+
+<Layout title="一輝塾について">
+  <PageHeading
+    en="ABOUT US"
+    title="一人ひとりと、まっすぐに。"
+    lead="目標から逆算し、自分に合う学び方を見つける。"
+  />
+  <section class="wrap content-section split">
+    <img
+      class="wide-photo"
+      src="/images/teacher.webp"
+      width="1024"
+      height="628"
+      alt="教室で授業を行う澤木勇佑"
+    />
+    <div>
+      <span class="eyebrow">OUR PHILOSOPHY</span>
+      <h2>
+        学ぶ理由を、
+        <br />
+        一緒に考える。
+      </h2>
+      <p>
+        一輝塾は、愛知県江南市にある学習塾です。京大卒講師が、中学生・高校生それぞれの目標に合わせた学習戦略を考えます。
+      </p>
+      <p>受験で結果を出すための学びと、その先でも自分を支える力。その両方を大切にしています。</p>
+    </div>
+  </section>
+  <section class="wrap content-section prose">
+    <h2>一輝塾で大切にしていること</h2>
+    <ol class="editorial-list">
+      <li>
+        <h3>志望校から逆算する</h3>
+        <p>難関大学から地域の高校まで、志望校と現在の学習状況を踏まえて戦略を考えます。</p>
+      </li>
+      <li>
+        <h3>代表が個別指導も担当する</h3>
+        <p>集団授業に加え、個別指導も代表が担当。一人ひとりの理解や課題に向き合います。</p>
+      </li>
+      <li>
+        <h3>学年を越えて学ぶ</h3>
+        <p>集団授業には飛び級制度があり、学年の枠を越えて挑戦できます。</p>
+      </li>
+      <li>
+        <h3>学び続けられる環境</h3>
+        <p>自習室を備え、授業以外の学習も支えます。テキスト代は不要です。</p>
+      </li>
+    </ol>
+  </section>
+  <section class="content-section soft">
+    <div class="wrap prose">
+      <span class="eyebrow">FROM THE TEACHER</span>
+      <h2>これから受験を迎えるあなたへ</h2>
+      <p class="preserve-lines">{site.message}</p>
+      <p>一輝塾 代表　{site.teacherName}</p>
+    </div>
+  </section>
+</Layout>

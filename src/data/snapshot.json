@@ -1,0 +1,1089 @@
+{
+  "site": {
+    "acceptance": "高校３年生の入塾希望は停止しています",
+    "universityLabel": "大学受験",
+    "highschoolLabel": "高校受験",
+    "universitySummary": "東京大学、京都大学、防衛医科大学校、東京都立大学、名古屋大学、名古屋市立大学、名古屋工業大学、南山大学、名城大学、愛知大学、中京大学、同志社大学、立命館大学、関西大学など",
+    "highschoolSummary": "千種高校、向陽高校、西春高校、江南高校、名城高校、大成高校など",
+    "priceNote": "(1コマ80分)",
+    "juniorFee": "3,800円",
+    "highFee": "4,200円",
+    "priceFooter": "＊税込・割引制度あり / 自習室あり",
+    "schedule": [
+      {
+        "label": "平日",
+        "value": "16:30 / 18:00 / 19:30 / 21:00"
+      },
+      {
+        "label": "土曜",
+        "value": "13:30 / 15:00 / 16:30\n18:00 / 19:30 / 21:00"
+      },
+      {
+        "label": "日曜",
+        "value": "定休日"
+      }
+    ],
+    "examples": [
+      {
+        "label": "週1コース (中学)",
+        "value": "14,440円～"
+      },
+      {
+        "label": "週1コース (高校)",
+        "value": "15,960円～"
+      },
+      {
+        "label": "週2コース (中学)",
+        "value": "28,880円～"
+      },
+      {
+        "label": "週2コース (高校)",
+        "value": "31,920円～"
+      },
+      {
+        "label": "しっかり学習 (中学)",
+        "value": "48,820円～"
+      },
+      {
+        "label": "しっかり学習 (高校)",
+        "value": "53,380円～"
+      }
+    ]
+  },
+  "news": [
+    {
+      "id": "9kXoOyonvE6uWSdaApBE",
+      "date": "2025-12-04",
+      "title": "試しにお知らせ追加しました。",
+      "body": "試しにお知らせ追加しました。"
+    },
+    {
+      "id": "QmVh5Cc5KyxbBLjGXX0k",
+      "date": "2025-03-27",
+      "title": "2025年 入塾生募集は終了致しまし。",
+      "body": "2025年 入塾生募集は終了致しまし。"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "2025",
+      "year": 2025,
+      "high": 14,
+      "ronin": 3,
+      "junior": 3,
+      "groups": [
+        {
+          "label": "大学受験",
+          "items": [
+            {
+              "school": "東京大学",
+              "department": "理Ⅲ",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "防衛医科大学校",
+              "department": "医学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "明治大学",
+              "department": "理工",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "青山学院大学",
+              "department": "文学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "人文",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "薬学",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "愛知大学",
+              "department": "経済",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "愛知大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "心理",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋大学",
+              "department": "農学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "スポーツ",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "藤田医科大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知医科大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知淑徳大学",
+              "department": "ビジネス",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知淑徳大学",
+              "department": "交流文化",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知学院大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知学院大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中部大学",
+              "department": "生命",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜医療科学大学",
+              "department": "薬学",
+              "count": null,
+              "note": "特待"
+            },
+            {
+              "school": "岐阜医療科学大学",
+              "department": "看護",
+              "count": null,
+              "note": "特待"
+            },
+            {
+              "school": "神戸大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋学院大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "至学館大学",
+              "department": "健康",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "神戸市外国語大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋工業大学",
+              "department": "創造",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋市立大学",
+              "department": "人文",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋市立大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜大学",
+              "department": "社会",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "早稲田大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "高校受験",
+          "items": [
+            {
+              "school": "江南高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "津島高校",
+              "department": "",
+              "count": 1,
+              "note": ""
+            },
+            {
+              "school": "尾北高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "鶯谷高校",
+              "department": "",
+              "count": 1,
+              "note": ""
+            },
+            {
+              "school": "大成高校(プラウ)",
+              "department": "",
+              "count": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "中学受験",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "2024",
+      "year": 2024,
+      "high": 14,
+      "ronin": 1,
+      "junior": 6,
+      "groups": [
+        {
+          "label": "大学受験",
+          "items": [
+            {
+              "school": "東京大学",
+              "department": "理Ⅰ",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "京都大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "慶応大学",
+              "department": "経済",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "慶応大学",
+              "department": "商学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "同志社大学",
+              "department": "理工",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "同志社大学",
+              "department": "法学",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "同志社大学",
+              "department": "商学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "青山学院大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "青山学院大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "青山学院大学",
+              "department": "社会",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "明治大学",
+              "department": "法学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中央大学",
+              "department": "法学",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "岐阜大学",
+              "department": "医学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "立命館大学",
+              "department": "法学",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "豊田工業大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "芝浦工業大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "関西学院大学",
+              "department": "社会",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜医療科学大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋大学",
+              "department": "情報",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "神戸大学",
+              "department": "法学",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "千葉大学",
+              "department": "法政経",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋市立大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "長岡技術科学大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "早稲田大学",
+              "department": "政経",
+              "count": null,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "高校受験",
+          "items": [
+            {
+              "school": "千種高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "松陰高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "大同高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "修文学院高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋たちばな高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "江南高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "一宮南高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "尾北高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "愛知総合工科高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛工大名電高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "陸上自衛隊高等工科学校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "大成高校(プラウ)",
+              "department": "",
+              "count": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "中学受験",
+          "items": [
+            {
+              "school": "愛知中学",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "大成中学",
+              "department": "",
+              "count": null,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023",
+      "year": 2023,
+      "high": 12,
+      "ronin": 0,
+      "junior": 2,
+      "groups": [
+        {
+          "label": "大学受験",
+          "items": [
+            {
+              "school": "名古屋工業大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋市立大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋外国語大学",
+              "department": "英米",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "理工",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "人間",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "公立春日井小牧看護専門学校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "日本大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知大学",
+              "department": "経済",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知淑徳大学",
+              "department": "創造",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知県立大学",
+              "department": "英米",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "京都外国語大学",
+              "department": "英米",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜医療科学大学",
+              "department": "看護",
+              "count": 2,
+              "note": "特待1"
+            },
+            {
+              "school": "愛知学院大学",
+              "department": "文学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋学院大学",
+              "department": "国際",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "一宮研伸大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京学院大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "長野県看護大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中央大学",
+              "department": "国際",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "英米",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "スぺ",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "経済",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "名古屋外国語大学",
+              "department": "世教",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋外国語大学",
+              "department": "世共",
+              "count": null,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "高校受験",
+          "items": [
+            {
+              "school": "尾北高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "一宮北高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            },
+            {
+              "school": "誠信高校",
+              "department": "",
+              "count": 2,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "中学受験",
+          "items": [
+            {
+              "school": "金城学院中学",
+              "department": "",
+              "count": null,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022",
+      "year": 2022,
+      "high": 9,
+      "ronin": 0,
+      "junior": 2,
+      "groups": [
+        {
+          "label": "大学受験",
+          "items": [
+            {
+              "school": "名古屋工業大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "中京大学",
+              "department": "文学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "東洋大学",
+              "department": "情報",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知医科大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "藤田医科大学",
+              "department": "保健",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知学院大学",
+              "department": "経営",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "愛知学院大学",
+              "department": "心身",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "金城学院大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "岐阜医療科学大学",
+              "department": "看護",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋学院大学",
+              "department": "経済",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名古屋経済大学",
+              "department": "経営",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "琉球大学",
+              "department": "工学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "帝京大学",
+              "department": "理工",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "東京都市大学",
+              "department": "情報",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "人文",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "南山大学",
+              "department": "理工",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "薬学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "農学",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "理工",
+              "count": 3,
+              "note": ""
+            },
+            {
+              "school": "名城大学",
+              "department": "都市",
+              "count": null,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "高校受験",
+          "items": [
+            {
+              "school": "尾北高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "一宮北高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "高蔵高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            },
+            {
+              "school": "大同高校",
+              "department": "",
+              "count": null,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "label": "中学受験",
+          "items": []
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "202506",
+      "month": "2025-06",
+      "days": ["2025-06-04", "2025-06-15", "2025-06-26"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202507",
+      "month": "2025-07",
+      "days": [
+        "2025-07-01",
+        "2025-07-02",
+        "2025-07-03",
+        "2025-07-04",
+        "2025-07-06",
+        "2025-07-07",
+        "2025-07-08",
+        "2025-07-09",
+        "2025-07-10",
+        "2025-07-11",
+        "2025-07-13",
+        "2025-07-14",
+        "2025-07-15",
+        "2025-07-16",
+        "2025-07-17",
+        "2025-07-18",
+        "2025-07-24"
+      ],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202508",
+      "month": "2025-08",
+      "days": ["2025-08-08", "2025-08-13", "2025-08-14", "2025-08-15", "2025-08-25", "2025-08-27"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202509",
+      "month": "2025-09",
+      "days": ["2025-09-05", "2025-09-14", "2025-09-22"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202510",
+      "month": "2025-10",
+      "days": ["2025-10-01", "2025-10-10", "2025-10-12", "2025-10-30"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202511",
+      "month": "2025-11",
+      "days": ["2025-11-13", "2025-11-20", "2025-11-23"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202512",
+      "month": "2025-12",
+      "days": ["2025-12-05", "2025-12-14", "2025-12-23", "2025-12-28", "2025-12-29", "2025-12-30"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202601",
+      "month": "2026-01",
+      "days": ["2026-01-01", "2026-01-02", "2026-01-16", "2026-01-18", "2026-01-23"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202602",
+      "month": "2026-02",
+      "days": ["2026-02-15", "2026-02-16", "2026-02-17", "2026-02-24"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202603",
+      "month": "2026-03",
+      "days": ["2026-03-13", "2026-03-19", "2026-03-20", "2026-03-25"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202604",
+      "month": "2026-04",
+      "days": ["2026-04-05", "2026-04-13", "2026-04-28"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202605",
+      "month": "2026-05",
+      "days": ["2026-05-01", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-17", "2026-05-28"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202606",
+      "month": "2026-06",
+      "days": ["2026-06-05", "2026-06-15", "2026-06-26"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202607",
+      "month": "2026-07",
+      "days": ["2026-07-03", "2026-07-15", "2026-07-16", "2026-07-19"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202608",
+      "month": "2026-08",
+      "days": ["2026-08-03", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-26", "2026-08-27"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202609",
+      "month": "2026-09",
+      "days": ["2026-09-02", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-27"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202610",
+      "month": "2026-10",
+      "days": ["2026-10-02", "2026-10-11", "2026-10-23", "2026-10-25"],
+      "note": "日曜日は定休日です。"
+    },
+    {
+      "id": "202611",
+      "month": "2026-11",
+      "days": ["2026-11-02", "2026-11-10", "2026-11-22", "2026-11-23"],
+      "note": "日曜日は定休日です。"
+    }
+  ]
+}

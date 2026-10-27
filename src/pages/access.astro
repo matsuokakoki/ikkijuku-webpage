@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { staticSite as site } from '../data/static';
+const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('一輝塾 ' + site.address)}`;
+---
+
+<Layout title="アクセス・教室案内">
+  <PageHeading en="ACCESS" title="いつもの街に、学びの場所。" lead={site.access} />
+  <section class="wrap content-section access-detail">
+    <div class="building-pictures">
+      <img src="/images/building.webp" width="1080" height="1920" alt="一輝塾の建物外観" />
+      <img
+        src="/images/building1.webp"
+        width="1080"
+        height="1920"
+        alt="一輝塾の建物の別角度からの外観"
+        loading="lazy"
+      />
+    </div>
+    <div>
+      <h2>一輝塾</h2>
+      <dl class="detail-list">
+        <div>
+          <dt>所在地</dt>
+          <dd>
+            〒{site.postalCode}
+            <br />
+            {site.address}
+          </dd>
+        </div>
+        <div>
+          <dt>アクセス</dt>
+          <dd>{site.access}</dd>
+        </div>
+        <div>
+          <dt>電話</dt>
+          <dd>
+            <a href={`tel:${site.phone}`}>{site.phone}</a>
+          </dd>
+        </div>
+        <div>
+          <dt>メール</dt>
+          <dd>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </dd>
+        </div>
+        <div>
+          <dt>受付時間</dt>
+          <dd>
+            平日 15:00–22:30
+            <br />
+            土曜 12:00–22:30
+            <br />
+            日曜定休
+          </dd>
+        </div>
+      </dl>
+      <a class="button" href={map} target="_blank" rel="noopener noreferrer">
+        Googleマップで見る ↗
+      </a>
+      <p class="fine-print">外部サイトが開きます。</p>
+    </div>
+  </section>
+  <section class="wrap content-section prose">
+    <h2>送迎時のお願い</h2>
+    <p>
+      近隣のコインランドリー敷地内への駐車はお控えください。特に夜の送迎時は、コインランドリーをご利用のお客様の妨げにならないようご協力をお願いいたします。
+    </p>
+  </section>
+</Layout>

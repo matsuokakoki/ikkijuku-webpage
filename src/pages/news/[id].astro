@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getContent } from '../../lib/content';
+import { richText, formatDate } from '../../lib/format';
+export async function getStaticPaths() {
+  const { news } = await getContent();
+  return news.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.title}>
+  <article class="wrap article content-section">
+    <a class="breadcrumb" href="/news/">
+      お知らせ一覧
+    </a>
+    <time datetime={item.date}>{formatDate(item.date)}</time>
+    <h1>{item.title}</h1>
+    <div class="rich-text" set:html={richText(item.body)} />
+    <a class="text-link" href="/news/">
+      ← お知らせ一覧に戻る
+    </a>
+  </article>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import { getContent } from '../../lib/content';
+const { site, achievements } = await getContent();
+---
+
+<Layout title="合格実績">
+  <PageHeading
+    en="ACHIEVEMENTS"
+    title="一人ひとりの挑戦の記録。"
+    lead="これまでの合格実績をご紹介します。"
+  />
+  <section class="wrap content-section">
+    <div class="result-row">
+      <h2>{site.universityLabel}</h2>
+      <p>{site.universitySummary}</p>
+    </div>
+    <div class="result-row">
+      <h2>{site.highschoolLabel}</h2>
+      <p>{site.highschoolSummary}</p>
+    </div>
+  </section>
+  <section class="wrap content-section">
+    <h2>年度別の合格実績</h2>
+    <nav class="year-links" aria-label="年度別実績">
+      {achievements.map((item) => (
+        <a href={`/achievements/${item.year}/`}>
+          {item.year}年度 <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </nav>
+    {!achievements.length && <p>年度別実績は準備中です。</p>}
+  </section>
+</Layout>

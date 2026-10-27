@@ -1,0 +1,17 @@
+---
+interface Props {
+  en: string;
+  title: string;
+  lead?: string;
+}
+const { en, title, lead } = Astro.props;
+---
+
+<div class="page-heading wrap">
+  <a class="breadcrumb" href="/">
+    ホーム
+  </a>
+  <span class="eyebrow">{en}</span>
+  <h1>{title}</h1>
+  {lead && <p>{lead}</p>}
+</div>

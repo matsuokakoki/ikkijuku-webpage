@@ -1,0 +1,92 @@
+{
+  "name": "年度別の合格実績",
+  "endpoint": "achievements",
+  "type": "list",
+  "allowAdditionalCharge": false,
+  "apiFields": [
+    {
+      "fieldId": "year",
+      "name": "年度",
+      "kind": "number",
+      "required": true
+    },
+    {
+      "fieldId": "high",
+      "name": "高校生の人数",
+      "kind": "number",
+      "required": true
+    },
+    {
+      "fieldId": "ronin",
+      "name": "浪人生の人数",
+      "kind": "number",
+      "required": true
+    },
+    {
+      "fieldId": "junior",
+      "name": "中学生の人数",
+      "kind": "number",
+      "required": true
+    },
+    {
+      "fieldId": "groups",
+      "name": "大学・高校・中学の合格実績",
+      "kind": "repeater",
+      "required": true,
+      "customFieldIds": ["resultGroup"]
+    }
+  ],
+  "customFields": [
+    {
+      "fieldId": "resultGroup",
+      "name": "受験区分",
+      "fields": [
+        {
+          "fieldId": "label",
+          "name": "区分（大学受験・高校受験・中学受験）",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "fieldId": "items",
+          "name": "合格校",
+          "kind": "repeater",
+          "required": false,
+          "customFieldIds": ["resultRow"]
+        }
+      ],
+      "fieldOrderByColumn": [["label", "items"]]
+    },
+    {
+      "fieldId": "resultRow",
+      "name": "学校と人数",
+      "fields": [
+        {
+          "fieldId": "school",
+          "name": "学校名",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "fieldId": "department",
+          "name": "学部・学科",
+          "kind": "text",
+          "required": false
+        },
+        {
+          "fieldId": "count",
+          "name": "合格人数（省略可）",
+          "kind": "number",
+          "required": false
+        },
+        {
+          "fieldId": "note",
+          "name": "備考",
+          "kind": "textArea",
+          "required": false
+        }
+      ],
+      "fieldOrderByColumn": [["school", "department", "count", "note"]]
+    }
+  ]
+}

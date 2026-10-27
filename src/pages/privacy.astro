@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { staticSite as site } from '../data/static';
+---
+
+<Layout title="プライバシーポリシー">
+  <PageHeading en="PRIVACY POLICY" title="プライバシーポリシー" />
+  <article class="wrap content-section prose">
+    <p>一輝塾は、お問い合わせなどでお預かりする個人情報を、以下の方針に基づいて取り扱います。</p>
+    <h2>個人情報の利用目的</h2>
+    <p>
+      お名前、連絡先、学年、ご相談内容などは、お問い合わせへの回答、ご連絡、授業や通塾に関するご案内のために利用します。
+    </p>
+    <h2>個人情報の管理</h2>
+    <p>
+      個人情報への不正アクセス、紛失、漏えいなどを防ぐため、アクセス権限の管理など、必要な安全対策を行います。
+    </p>
+    <h2>第三者への提供</h2>
+    <p>
+      ご本人の同意がある場合、業務に必要な範囲で委託する場合、法令に基づく場合を除き、個人情報を第三者に提供しません。
+    </p>
+    <h2>外部サービス</h2>
+    <p>
+      このサイトの配信にはCloudflareを使用しています。GoogleマップやGoogleフォームへのリンクを開いた場合は、各サービスのプライバシーポリシーが適用されます。お問い合わせフォームはFormSubmitを使用し、入力された内容を同サービスを通じて教室へ送信します。お問い合わせメールはメールサービスを通じて取り扱います。
+    </p>
+    <h2>照会・訂正・削除</h2>
+    <p>
+      ご本人の個人情報について照会、訂正、削除を希望される場合は、下記の窓口へご連絡ください。ご本人であることを確認のうえ対応します。
+    </p>
+    <h2>お問い合わせ窓口</h2>
+    <p>
+      {site.name}
+      <br />
+      {site.address}
+      <br />
+      電話：<a href={`tel:${site.phone}`}>{site.phone}</a>
+      <br />
+      メール：<a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </article>
+</Layout>
