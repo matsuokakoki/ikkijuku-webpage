@@ -1,10 +1,12 @@
 import snapshot from '../data/snapshot.json';
+import savedCalendar from '../data/closures-snapshot.json';
 import { contentSchema, type Content } from './schema';
 import { normalizeMicrocms } from './normalize';
+import { getPublicCalendar } from './public-calendar';
 let pending: Promise<Content> | undefined;
 async function load(): Promise<Content> {
   const source = import.meta.env.CONTENT_SOURCE || 'snapshot';
-  if (source === 'snapshot') return contentSchema.parse(snapshot);
+  if (source === 'snapshot') return contentSchema.parse({ ...snapshot, calendar: savedCalendar });
   if (source !== 'microcms') throw new Error('Unknown CONTENT_SOURCE');
   const domain = import.meta.env.MICROCMS_SERVICE_DOMAIN;
   const key = import.meta.env.MICROCMS_API_KEY;
@@ -36,13 +38,14 @@ async function load(): Promise<Content> {
     request('site'),
     list('news'),
     list('achievements'),
-    list('calendar'),
+    getPublicCalendar(),
   ]);
+  if (!site.publishedAt) throw new Error('サイト設定をmicroCMSで公開してからビルドしてください');
   return normalizeMicrocms(
     site,
-    news as Record<string, any>[],
-    achievements as Record<string, any>[],
-    calendar as Record<string, any>[],
+    (news as Record<string, any>[]).filter((row) => row.publishedAt),
+    (achievements as Record<string, any>[]).filter((row) => row.publishedAt),
+    calendar,
   );
 }
 export const getContent = () => (pending ??= load());

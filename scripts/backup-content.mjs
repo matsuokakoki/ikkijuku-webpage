@@ -28,19 +28,15 @@ async function list(endpoint) {
   } while (contents.length < total);
   return contents;
 }
-const [site, news, achievements, calendar] = await Promise.all([
+const [site, news, achievements] = await Promise.all([
   get('site'),
   list('news'),
   list('achievements'),
-  list('calendar'),
 ]);
 await fs.writeFile(
   output,
-  JSON.stringify(
-    { exportedAt: new Date().toISOString(), site, news, achievements, calendar },
-    null,
-    2,
-  ) + '\n',
+  JSON.stringify({ exportedAt: new Date().toISOString(), site, news, achievements }, null, 2) +
+    '\n',
   { flag: 'wx', mode: 0o600 },
 );
 console.log('Public CMS content backup saved; no credentials included.');

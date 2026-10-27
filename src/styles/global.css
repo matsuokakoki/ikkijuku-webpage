@@ -1487,3 +1487,16 @@ ol {
 .calendar-controls span {
   min-width: 45px;
 }
+
+.calendar td small {
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.calendar-warning {
+  color: #8b412f;
+  font-weight: 600;
+}
+.calendar .sunday small {
+  color: #92503b;
+}

@@ -37,3 +37,21 @@ test('calendar rejects impossible dates and dates outside selected month', () =>
     false,
   );
 });
+
+import { monthPeriod, parseClosures } from '../src/lib/closures';
+test('attendance API preserves JST dates and public reasons exactly', () => {
+  const period = monthPeriod('2026-11');
+  assert.deepEqual(period, { from: '2026-11-01', to: '2026-11-30' });
+  const data = {
+    version: 1,
+    timezone: 'Asia/Tokyo',
+    closures: [{ date: '2026-11-03', reason: '祝日' }],
+  };
+  assert.deepEqual(parseClosures(data, period.from, period.to), data);
+  for (const date of ['2026-11-31', '2026-12-01']) {
+    assert.throws(() =>
+      parseClosures({ ...data, closures: [{ date, reason: '' }] }, period.from, period.to),
+    );
+  }
+  assert.throws(() => parseClosures({ ...data, timezone: 'UTC' }, period.from, period.to));
+});

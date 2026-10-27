@@ -14,6 +14,7 @@ export const GET: APIRoute = async ({ site }) => {
     '/privacy/',
     ...c.news.map((n) => `/news/${n.id}/`),
     ...c.achievements.map((a) => `/achievements/${a.year}/`),
+    ...c.calendar.map((m) => `/calendar/${m.month}/`),
   ];
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>${new URL(p, site)}</loc></url>`).join('')}</urlset>`,

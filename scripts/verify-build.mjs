@@ -10,11 +10,9 @@ for (const name of html) {
   assert.match(body, /<html lang="ja"/);
   assert.equal((body.match(/<h1[ >]/g) || []).length, 1, `${name}: one h1 required`);
   assert.doesNotMatch(body, /firebasejs|X-MICROCMS-API-KEY|MICROCMS_API_KEY|\bAIza[\w-]+/);
-  assert.doesNotMatch(
-    body,
-    /<script\b[^>]*src=/,
-    `${name}: public pages must not require JavaScript`,
-  );
+  for (const script of body.matchAll(/<script\b[^>]*src="([^"]+)"/g)) {
+    assert.ok(script[1].startsWith('/_astro/'), `${name}: unexpected external script`);
+  }
   for (const m of body.matchAll(/(?:href|src)="(\/[^"?#]*)/g)) {
     const target = m[1];
     if (target.startsWith('//')) continue;

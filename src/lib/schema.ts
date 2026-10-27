@@ -45,6 +45,8 @@ export const calendarSchema = z
     month: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/),
     days: z.array(z.iso.date()),
     note: text.default(''),
+    reasons: z.record(z.string(), text).default({}),
+    fetchedAt: z.string().optional(),
   })
   .superRefine((v, ctx) => {
     if (v.days.some((d) => !d.startsWith(v.month + '-')))

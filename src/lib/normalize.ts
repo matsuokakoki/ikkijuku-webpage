@@ -1,6 +1,11 @@
-import { contentSchema } from './schema';
+import { contentSchema, type Content } from './schema';
 type Row = Record<string, any>;
-export function normalizeMicrocms(site: Row, news: Row[], achievements: Row[], calendar: Row[]) {
+export function normalizeMicrocms(
+  site: Row,
+  news: Row[],
+  achievements: Row[],
+  calendar: Content['calendar'],
+) {
   const result = contentSchema.parse({
     site,
     news: news.map((row) => ({
@@ -25,11 +30,7 @@ export function normalizeMicrocms(site: Row, news: Row[], achievements: Row[], c
         })),
       })),
     })),
-    calendar: calendar.map((row) => ({
-      ...row,
-      days: (row.days || []).map((day: Row) => String(day.day).slice(0, 10)),
-      note: row.note || '',
-    })),
+    calendar,
   });
   const years = new Set<number>();
   for (const row of result.achievements) {

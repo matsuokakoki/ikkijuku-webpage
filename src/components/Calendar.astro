@@ -10,7 +10,12 @@ const { month, previous, next } = Astro.props;
 const cells = monthCells(month.month, month.days);
 ---
 
-<section class="calendar-month">
+<section
+  class="calendar-month"
+  data-live-calendar
+  data-month={month.month}
+  data-fetched-at={month.fetchedAt}
+>
   <div class="calendar-controls">
     {previous ? <a href={`/calendar/${previous}/`}>← 前月</a> : <span></span>}
     <h2>{month.month.replace('-', '年')}月</h2>
@@ -29,11 +34,16 @@ const cells = monthCells(month.month, month.days);
       {Array.from({ length: cells.length / 7 }, (_, week) => (
         <tr>
           {cells.slice(week * 7, week * 7 + 7).map((cell) => (
-            <td class:list={[{ closed: cell?.closed, sunday: cell?.sunday }]}>
+            <td
+              data-date={cell?.date}
+              class:list={[{ closed: cell?.closed, sunday: cell?.sunday }]}
+            >
               {cell && (
                 <>
                   <span>{cell.day}</span>
-                  {cell.closed && <small>休講</small>}
+                  <small data-closure-label>
+                    {cell.closed ? month.reasons[cell.date] || '休講' : cell.sunday ? '定休日' : ''}
+                  </small>
                 </>
               )}
             </td>
@@ -43,4 +53,10 @@ const cells = monthCells(month.month, month.days);
     </tbody>
   </table>
   <p class="preserve-lines fine-print">{month.note}</p>
+  <p class="fine-print" role="status" aria-live="polite" data-calendar-status>
+    休講日は出席管理システムの公開情報を表示しています。
+  </p>
 </section>
+<script>
+  import '../scripts/calendar-client';
+</script>

@@ -4,7 +4,15 @@ test('public site renders without SDK, extra network calls or overflow', async (
   page.on('pageerror', (e) => failures.push(e.message));
   const remote: string[] = [];
   page.on('request', (r) => {
-    if (!r.url().startsWith('http://127.0.0.1:4322')) remote.push(r.url());
+    if (
+      !r.url().startsWith('http://127.0.0.1:4322') &&
+      !r
+        .url()
+        .startsWith(
+          'https://juku-attendance-system.juku-matsuokakoki.workers.dev/public/v1/closures?',
+        )
+    )
+      remote.push(r.url());
   });
   await page.goto('/');
   await expect(page.locator('h1')).toContainText('一輝塾');
@@ -39,4 +47,28 @@ test('content remains usable with JavaScript disabled', async ({ browser }) => {
   await page.locator('summary').click();
   await expect(page.getByRole('navigation', { name: 'モバイルナビゲーション' })).toBeVisible();
   await context.close();
+});
+
+test('live closures preserve dates, Sundays and last success after failure', async ({ page }) => {
+  let failing = false;
+  await page.route('**/public/v1/closures?*', async (route) => {
+    if (failing) return route.abort();
+    await route.fulfill({
+      json: {
+        version: 1,
+        timezone: 'Asia/Tokyo',
+        closures: [{ date: '2026-11-03', reason: '<祝日>' }],
+      },
+    });
+  });
+  await page.goto('/calendar/2026-11/');
+  await page.evaluate(() => window.dispatchEvent(new Event('online')));
+  const day = page.locator('[data-date="2026-11-03"]');
+  await expect(day).toContainText('<祝日>');
+  await expect(page.locator('[data-date="2026-11-01"]')).toContainText('定休日');
+  failing = true;
+  await page.evaluate(() => window.dispatchEvent(new Event('online')));
+  await expect(page.locator('[data-calendar-status]')).toContainText('前回確認した');
+  await expect(day).toContainText('<祝日>');
+  await expect(day).toHaveClass(/closed/);
 });
